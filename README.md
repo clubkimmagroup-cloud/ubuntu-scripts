@@ -4,16 +4,18 @@ A collection of automation scripts for Ubuntu system maintenance and setup.
 
 ## Scripts
 
-| Script | Description |
+| Script | Mô tả |
 |---|---|
-| `system-update.sh` | Full system update (apt + snap + flatpak) and cleanup |
-| `disk-cleanup.sh` | Free up disk space: temp files, logs, apt cache, old snaps |
-| `install-essentials.sh` | Install common development and sysadmin tools |
-| `setup-firewall.sh` | Configure UFW firewall with sensible defaults |
-| `system-info.sh` | Display detailed system information report |
-| `backup.sh` | Backup home directory to a destination |
-| `create-user.sh` | Create a new sudo user |
-| `monitor.sh` | Real-time system monitor (CPU, memory, disk, processes) |
+| `system-update.sh` | Cập nhật toàn hệ thống (apt + snap + flatpak) và dọn cache |
+| `disk-cleanup.sh` | Giải phóng dung lượng: temp, log, apt cache, snap cũ |
+| `install-essentials.sh` | Cài bộ công cụ dev/sysadmin cơ bản |
+| `setup-firewall.sh` | Cấu hình UFW firewall |
+| `system-info.sh` | Báo cáo thông tin hệ thống chi tiết |
+| `backup.sh` | Backup thư mục home |
+| `create-user.sh` | Tạo user sudo mới |
+| `monitor.sh` | Monitor real-time: CPU, RAM, disk, processes |
+| `mount-ntfs.sh` | Mount ổ NTFS (dual boot Windows+Ubuntu) tự động |
+| `install-claude.sh` | Cài Claude Desktop + Claude Code trên Ubuntu 26.04 |
 
 ## Usage
 
@@ -22,14 +24,29 @@ git clone https://github.com/clubkimmagroup-cloud/ubuntu-scripts
 cd ubuntu-scripts
 chmod +x *.sh
 
-# Example
+# Bảo trì hệ thống
 ./system-update.sh
 ./disk-cleanup.sh
 ./system-info.sh
-./monitor.sh          # real-time, Ctrl+C to quit
+./monitor.sh              # real-time, Ctrl+C để thoát
+
+# Thiết lập môi trường
+./install-essentials.sh
+./install-claude.sh       # Cài Claude Desktop + Claude Code
+./mount-ntfs.sh           # Mount ổ D (NTFS) tự động
+
+# Tiện ích
 ./backup.sh /media/backup
 ./create-user.sh newuser
+./setup-firewall.sh
 ```
+
+## Tài liệu (`docs/`)
+
+| File | Nội dung |
+|---|---|
+| `docs/huong-dan-mount-o-ntfs-ubuntu.md` | Hướng dẫn chi tiết mount ổ NTFS |
+| `docs/cai-claude-desktop-claude-code-ubuntu.md` | Hướng dẫn cài Claude trên Ubuntu 26.04 |
 
 ## Requirements
 
